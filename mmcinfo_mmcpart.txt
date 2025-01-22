@@ -1,0 +1,42 @@
+==========================================================
+(IPQ40xx) # mmcinfo
+Device: qca_mmc
+Manufacturer ID: 15
+OEM: 100
+Name: 4FTE4
+Tran Speed: 25000000
+Rd Block Len: 512
+MMC version 4.0
+High Capacity: Yes
+Capacity: 3.6 GiB
+Bus Width: 8-bit
+==========================================================
+
+==========================================================
+(IPQ40xx) # mmc part
+
+Partition Map for MMC device 0  --   Partition Type: EFI
+
+Part    Name                    Start LBA       End LBA
+  1     0:SBL1                  0x00000022      0x00000421
+  2     0:BOOTCONFIG            0x00000422      0x00000821
+  3     0:QSEE                  0x00000822      0x00000C21
+  4     0:QSEE_1                0x00000C22      0x00001021
+  5     0:CDT                   0x00001022      0x00001221
+  6     0:CDT_1                 0x00001222      0x00001421
+  7     0:BOOTCONFIG1           0x00001422      0x00001621
+  8     0:APPSBL                0x00001622      0x00001E21
+  9     0:APPSBL_1              0x00001E22      0x00002621
+ 10     0:ART                   0x00002622      0x00002821
+ 11     u_env                   0x00002822      0x00003021
+ 12     s_env                   0x00003022      0x00003821
+ 13     devinfo                 0x00003822      0x00004021
+ 14     kernel                  0x00004022      0x00048021
+ 15     rootfs                  0x00008022      0x00048021
+ 16     alt_kernel              0x00048022      0x0008C021
+ 17     alt_rootfs              0x0004C022      0x0008C021
+ 18     sysdiag                 0x0008C022      0x0008C421
+ 19     syscfg                  0x0008C422      0x00747FDE
+
+==========================================================
+

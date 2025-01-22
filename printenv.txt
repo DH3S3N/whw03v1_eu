@@ -1,0 +1,107 @@
+
+Format: Log Type - Time(microsec) - Message - Optional Info
+Log Type: B - Since Boot(Power On Reset),  D - Delta,  S - Statistic
+S - QC_IMAGE_VERSION_STRING=BOOT.BF.3.1.1-00108
+S - IMAGE_VARIANT_STRING=DAAAANAZA
+S - OEM_IMAGE_VERSION_STRING=CRM
+S - Boot Config, 0x00000023
+S - Reset status Config, 0x00000010
+S - Core 0 Frequency, 0 MHz
+B -       261 - PBL, Start
+B -      1338 - bootable_media_detect_entry, Start
+B -     87976 - bootable_media_detect_success, Start
+B -     87990 - elf_loader_entry, Start
+B -     90201 - auth_hash_seg_entry, Start
+B -     92343 - auth_hash_seg_exit, Start
+B -    127095 - elf_segs_hash_verify_entry, Start
+B -    240864 - PBL, End
+B -    240888 - SBL1, Start
+B -    332914 - pm_device_init, Start
+D -         9 - pm_device_init, Delta
+B -    334418 - boot_flash_init, Start
+D -     29833 - boot_flash_init, Delta
+B -    368597 - boot_config_data_table_init, Start
+D -      2690 - boot_config_data_table_init, Delta - (419 Bytes)
+B -    376402 - clock_init, Start
+D -      7536 - clock_init, Delta
+B -    387597 - CDT version:2,Platform ID:8,Major ID:1,Minor ID:0,Subtype:6
+B -    391003 - sbl1_ddr_set_params, Start
+B -    396097 - cpr_init, Start
+D -         2 - cpr_init, Delta
+B -    400480 - Pre_DDR_clock_init, Start
+D -         4 - Pre_DDR_clock_init, Delta
+D -     13172 - sbl1_ddr_set_params, Delta
+B -    413776 - pm_driver_init, Start
+D -         2 - pm_driver_init, Delta
+B -    484859 - sbl1_wait_for_ddr_training, Start
+D -        27 - sbl1_wait_for_ddr_training, Delta
+B -    501040 - Image Load, Start
+D -     13939 - QSEE Image Loaded, Delta - (269176 Bytes)
+B -    515409 - Image Load, Start
+D -      1031 - SEC Image Loaded, Delta - (0 Bytes)
+B -    525163 - Image Load, Start
+D -     12956 - APPSBL Image Loaded, Delta - (444963 Bytes)
+B -    538546 - QSEE Execution, Start
+D -        60 - QSEE Execution, Delta
+B -    544720 - SBL1, End
+D -    305945 - SBL1, Delta
+S - Flash Throughput, 27482 KB/s  (714910 Bytes,  26013 us)
+S - DDR Frequency, 672 MHz
+
+
+U-Boot 2012.07 [Chaos Calmer 15.05.1,r35193] (Nov 18 2016 - 02:45:15)
+
+CBT U-Boot ver: 0.0.22
+
+smem ram ptable found: ver: 1 len: 3
+DRAM:  512 MiB
+machid : 0x8010006
+NAND:  SF NAND unsupported id:ff:ff:ff:ffSF: Unsupported manufacturer ff
+ipq_spi: SPI Flash not found (bus/cs/speed/mode) = (0/0/48000000/0)
+0 MiB
+MMC:   qca_mmc: 0
+PCI0 Link Intialized
+In:    serial
+Out:   serial
+Err:   serial
+machid: 8010006
+flash_type: 1 => [eMMC]
+LED(PCA963x) initializing ... done
+Net:   MAC0 addr:0:3:7f:ea:fa:e6
+PHY ID1: 0x4d
+PHY ID2: 0xd0b2
+ipq40xx_ess_sw_init done
+eth0
+DEVINFO: devinfo_init EMMC ... DONE
+Updating boot_count ... Done
+Hit any key to stop autoboot:  2  0 
+(IPQ40xx) # printenv
+altkern=48022
+auto_recovery=yes
+baudrate=115200
+boot_part=1
+boot_part_ready=3
+boot_ver=0.0.22
+bootargs=console=ttyMSM0,115200n8
+bootcmd=if test $boot_part = 1; then run bootpart1; else run bootpart2; fi
+bootdelay=2
+bootpart1=set bootargs $partbootargs && mmc read $loadaddr $prikern 4000 && bootm $loadaddr
+bootpart2=set bootargs $partbootargs2 && && mmc read $loadaddr $altkern  4000 && bootm $loadaddr
+ethact=eth0
+fileaddr=90000000
+flash_type=1
+flashimg=tftp $fileaddr $image && mmc write $fileaddr $prikern $imgsize
+flashimg2=tftp $fileaddr $image && mmc write $fileaddr $altkern $imgsize
+image=nodes.img
+imgsize=44000
+ipaddr=192.168.1.11
+loadaddr=84000000
+machid=8010006
+partbootargs=init=/sbin/init rootfstype=ext4 root=/dev/mmcblk0p15  rootwait console=ttyMSM0,115200n8
+partbootargs2=init=/sbin/init rootfstype=ext4 root=/dev/mmcblk0p17 rootwait console=ttyMSM0,115200n8
+prikern=4022
+stderr=serial
+stdin=serial
+stdout=serial
+
+Environment size: 986/1048572 bytes 
